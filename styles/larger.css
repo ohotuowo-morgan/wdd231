@@ -1,5 +1,9 @@
 @media only screen and (min-width: 38rem) {
-    header, main, nav, footer {
+
+    header,
+    main,
+    nav,
+    footer {
         max-width: 900px;
         margin: 0 auto;
     }
@@ -22,7 +26,29 @@
         justify-content: space-evenly;
     }
 
-    .navigation a{
+    .navigation a {
         border: none;
     }
+
+    /* Main  */
+
+    main {
+        padding: 5px 10px 5px 10px;
+    }
+
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10px;
+    }
+
+    .certificate {
+        grid-column: 1 / -1;
+    }
+
+    .container {
+        grid-template-columns: repeat( auto-fit, minmax(250px, 1fr));
+    }
+
 }
