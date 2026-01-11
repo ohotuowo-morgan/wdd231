@@ -9,7 +9,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -22,7 +22,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -34,7 +34,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -60,7 +60,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -85,15 +85,33 @@ function createCourseCards(data) {
 
         let card = document.createElement("button");
         let name = document.createElement("h3");
+        name.textContent = `${course.subject} ${course.number}`;
+
+        if (course.completed) {
+            let checkMark = document.createElement("span");
+            checkMark.textContent = "\u2713";
+            name.appendChild(checkMark);
+        }
+
         let title = document.createElement("p");
 
-        name.textContent = `${course.subject} ${course.number}`;
 
         card.classList.add("card-btn");
 
         card.appendChild(name);
 
         document.querySelector("#container").appendChild(card);
+
+        // Calculate Total Credits (Only for Completed Courses)
+        const total = data.reduce((acc, course) => {
+            if (course.completed) {
+                return acc + course.credits;
+            }
+            // Otherwise, just return the current total without adding anything
+            return acc;
+        }, 0);
+
+        document.getElementById("total-credits").innerHTML = total;
     });
 
 }
@@ -112,7 +130,6 @@ buttons.forEach(btn => {
             createCourseCards(courses.filter(c => c.subject === "WDD"));
         }
 
-        // update active state for visual feedback
         buttons.forEach(b => b.classList.remove("active"));
         btn.classList.add("active");
     });
