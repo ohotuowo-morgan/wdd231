@@ -55,6 +55,7 @@ footer{
     padding: 3rem;
     margin: auto;
     text-align: center;
+    padding-bottom: 0;
 }
 
 @media only screen and (max-width: 400px) {
