@@ -25,7 +25,7 @@ header{
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1.4rem;
+    padding: 1rem;
     /* background-color: var(--accent1); */
     background-color: #fafafa;
 }
@@ -37,7 +37,7 @@ header{
     align-items: center;
     text-decoration: none;
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
@@ -185,7 +185,7 @@ button:hover{
 
 .cardbox section.business p,
 .cardbox section.business a{
-    max-width: 12rem;
+    max-width: 8rem;
     width: 100%;
     text-align: left;
     margin-bottom: 0;
