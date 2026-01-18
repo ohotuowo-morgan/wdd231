@@ -113,6 +113,10 @@ main{
     color: var(--primary-color);
 }
 
+h1{
+    text-align: center;
+}
+
 .btn-container{
     display: flex;
     column-gap: 1rem;
