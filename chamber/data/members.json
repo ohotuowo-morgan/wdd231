@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Uyo Tech Hub",
+    "address": "45 Ikot Ekpene Road, Uyo",
+    "phone": "+234 801 234 5678",
+    "website": "https://uyotechhub.com",
+    "image": "images/uyo-tech.jpg",
+    "membershipLevel": 3,
+    "description": "Leading innovation center for startups and developers."
+  },
+  {
+    "name": "Ibibio Fabrics & Crafts",
+    "address": "12 Oron Road, Plaza Area, Uyo",
+    "phone": "+234 802 987 6543",
+    "website": "https://ibibiofabrics.org",
+    "image": "images/fabrics.jpeg",
+    "membershipLevel": 2,
+    "description": "Authentic traditional attire and handmade crafts."
+  },
+  {
+    "name": "Green City Agro",
+    "address": "88 Abak Road, Uyo",
+    "phone": "+234 705 555 1212",
+    "website": "https://greencityagro.ng",
+    "image": "images/agro.png",
+    "membershipLevel": 1,
+    "description": "Sustainable farming solutions and organic produce."
+  },
+  {
+    "name": "Dakada Logistics",
+    "address": "Airport Road, Uyo",
+    "phone": "+234 909 000 1111",
+    "website": "https://dakadalogistics.com",
+    "image": "images/logistics.png",
+    "membershipLevel": 3,
+    "description": "Global shipping and freight services."
+  },
+  {
+    "name": "Akwa Savings Bank",
+    "address": "22 Aka Road, Uyo",
+    "phone": "+234 813 444 9999",
+    "website": "https://akwasavings.com",
+    "image": "images/bank.png",
+    "membershipLevel": 3,
+    "description": "Financial services for local businesses."
+  },
+  {
+    "name": "Sunshine Bakery",
+    "address": "10 Nwaniba Road, Uyo",
+    "phone": "+234 701 222 3333",
+    "website": "https://sunshinebakery.com",
+    "image": "images/bakery.jpeg",
+    "membershipLevel": 1,
+    "description": "Fresh bread and pastries daily."
+  },
+  {
+    "name": "Uyo Digital Marketing",
+    "address": "3rd Floor, Ibom E-Library, Uyo",
+    "phone": "+234 808 777 8888",
+    "website": "https://uyodigital.com",
+    "image": "images/digital.png",
+    "membershipLevel": 2,
+    "description": "SEO and social media management experts."
+  },
+  {
+    "name": "Ibom Wellness Clinic",
+    "address": "15 Nsikak Eduok Avenue, Uyo",
+    "phone": "+234 812 345 6789",
+    "website": "https://ibomwellness.com",
+    "image": "images/clinic.png",
+    "membershipLevel": 3,
+    "description": "Comprehensive healthcare services and diagnostics."
+  },
+  {
+    "name": "Atlantic Resort & Suites",
+    "address": "Plot 4, Ewet Housing Estate, Uyo",
+    "phone": "+234 708 999 0000",
+    "website": "https://atlanticresortuyo.com",
+    "image": "images/resort.png",
+    "membershipLevel": 2,
+    "description": "Luxury accommodation and conference facilities."
+  }
+]
