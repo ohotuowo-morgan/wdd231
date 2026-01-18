@@ -35,6 +35,8 @@ const displayCompany = (companies) => {
         image.setAttribute("src", company.image);
         image.setAttribute("alt", `${company.name} logo`);
         image.setAttribute("loading", "lazy");
+        image.setAttribute('width', '100');
+        image.setAttribute('height', '100');
         title.textContent = `${company.name}`;
         address.textContent = `${company.address}`;
         website.setAttribute("href", company.website);
