@@ -5,20 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Uyo chamber of commerce directory page</title>
-    <meta name="description" content="Discover top local businesses and services in the Uyo Chamber of Commerce directory. Connect with industry leaders and grow your network in Akwa Ibom.">
+    <meta name="description"
+        content="Discover top local businesses and services in the Uyo Chamber of Commerce directory. Connect with industry leaders and grow your network in Akwa Ibom.">
     <meta name="author" content="Ohotuowo Morgan Agrinya">
 
-    <meta property="og:title" content="Uyo chamber of commerce directory page">
-    <meta property="og:description" content="Discover top local businesses and services in the Uyo Chamber of Commerce directory. Connect with industry leaders and grow your network in Akwa Ibom.">
+    <meta property="og:title" content="Uyo chamber of commerce Home page">
+    <meta property="og:description"
+        content="Discover top local businesses and services in the Uyo Chamber of Commerce directory. Connect with industry leaders and grow your network in Akwa Ibom.">
     <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/chamber/images/zero.jpg">
     <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/chamber/directory.html">
 
     <link rel="icon" href="images/favicon.ico">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" >
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-        rel="stylesheet" >
+        rel="stylesheet">
 
     <!-- Style Sheets -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -26,7 +28,7 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <!-- Scripts -->
-    <script src="scripts/directory.js" defer></script>
+    <script src="scripts/home.js" defer></script>
 </head>
 
 <body>
@@ -39,8 +41,8 @@
         <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
 
         <nav class="navigation" id="navigation">
-            <a href="./index.html">Home</a>
-            <a href="./directory.html" id="active">Directory</a>
+            <a href="#" id="active">Home</a>
+            <a href="./directory.html">Directory</a>
             <a href="#">Join</a>
             <a href="#">Discovery</a>
         </nav>
@@ -52,20 +54,53 @@
     </header>
 
     <main>
-        <h1>Uyo Chamber of Commerce Members</h1>
+        <h1>Uyo Chamber of Commerce</h1>
 
-        <div class="container" id="container">
-            <div class="btn-container">
-                <button id="grid">Grid</button>
-                <button id="list">List</button>
-            </div>
-
-            <section class="cardbox">
-
-            </section>
-
+        <div class="hero" id="hero">
+            <img src="./images/hero.jpg" alt="hero image for chamber of commerce" class="heroimg">
+            <button class="cta-btn">Join the Chamber!</button>
         </div>
 
+        <section class="weather-layout">
+            <div class="event card">
+                <h2>Events</h2>
+                <ul>
+                    <li>Annual Gala - December 12th</li>
+                    <li>Chamber Meetup - January 15th</li>
+                    <li>Chamber reunion - Ocotber 22nd</li>
+                </ul>
+            </div>
+
+            <div class="weather card">
+                <h2>Current Weather</h2>
+
+                <div class="weather-card">
+                    <img src="" alt="" id="weather-icon">
+
+                    <div>
+                        <p id="current-temp"></p>
+                        <p id="weather-desc"></p>
+                        <p>High: <span id="high-temp"></span></p>
+                        <p>Low: <span id="low-temp"></span></p>
+                        <p>Humidity: <span id="humidity"></span></p>
+                        <p>Sunrise: <span id="sunrise"></span></p>
+                        <p>Sunset: <span id="sunset"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast card">
+                <h2>Weather Forecast</h2>
+                <p><span id="day1-name"></span>: <span id="day1-temp"></span></p>
+                <p><span id="day2-name"></span>: <span id="day2-temp"></span></p>
+                <p><span id="day3-name"></span>: <span id="day3-temp"></span></p>
+            </div>
+
+        </section>
+
+        <div class="business-cards">
+
+        </div>
     </main>
 
     <footer>

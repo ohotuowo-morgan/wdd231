@@ -70,4 +70,21 @@ Brownish yellow - #f8ab38ff */
         /* padding-bottom: .8rem; */
     }
 
+    /* Index page styling for the main and hero */
+    .heroimg {
+        background-size: cover;
+        width: 100%;
+        height: auto;
+    }
+
+    .weather-layout {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+
+    .business-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
 }
