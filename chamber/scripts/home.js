@@ -7,40 +7,42 @@ const lon = "7.91289974164656"
 const apikey = "dab29e64e1c634bee2f2ae337735c943";
 
 
-const weatherurl = `//api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`;
+const weatherurl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`;
 
-const forecasturl = `//api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`;
+const forecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apikey}&units=metric`;
 
 async function apiFetch() {
-    try{
+    try {
         const response = await fetch(weatherurl);
-        if (response.ok){
+        if (response.ok) {
             const result = await response.json();
             console.log(result);
             displayCurrentWeather(result);
-        }else{
-            throw Error (await response.text());
+        } else {
+            throw Error(await response.text());
         }
 
 
         const forecastResponse = await fetch(forecasturl);
-        if (forecastResponse.ok){
+        if (forecastResponse.ok) {
             const forecastData = await forecastResponse.json();
             displayForecast(forecastData);
-        }else{
-            throw Error (await forecastResponse.text());
+        } else {
+            throw Error(await forecastResponse.text());
         }
 
-    }catch(error){
+    } catch (error) {
         console.log(error);
     }
 }
 
 function displayCurrentWeather(data) {
+    const weatherCardInner = document.querySelector(".weather-card");
+    
+    const statsDiv = weatherCardInner.querySelector("div");
     const currentTemp = document.querySelector("#current-temp");
-    const weatherIcon = document.querySelector("#weather-icon");
     const description = document.querySelector("#weather-desc");
-    const high =  document.querySelector("#high-temp");
+    const high = document.querySelector("#high-temp");
     const low = document.querySelector("#low-temp");
     const humidity = document.querySelector("#humidity");
     const sunrise = document.querySelector("#sunrise");
@@ -51,32 +53,53 @@ function displayCurrentWeather(data) {
     high.innerHTML = `${data.main.temp_max.toFixed(0)}&deg;C`;
     low.innerHTML = `${data.main.temp_min.toFixed(0)}&deg;C`;
     humidity.textContent = `${data.main.humidity}%`;
-    
+
+    const icon = document.createElement("img");
+
     const iconsrc = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    weatherIcon.setAttribute('src', iconsrc);
-    weatherIcon.setAttribute('alt', data.weather[0].description);
+    icon.setAttribute('src', iconsrc);
+    icon.setAttribute('alt', data.weather[0].description);
+    icon.setAttribute('id', 'weather-icon'); // Give it the ID back for styling
+    icon.setAttribute('width', '100');     // Good for performance
+    icon.setAttribute('height', '100');
+
+    weatherCardInner.insertBefore(icon, statsDiv);
+
+    const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    // 3. DISPLAY THEM
+    sunrise.textContent = sunriseTime;
+    sunset.textContent = sunsetTime;
 }
 
 function displayForecast(data) {
 
-  const noonForecasts = data.list.filter(item => item.dt_txt.includes('12:00:00'));
+    const noonForecasts = data.list.filter(item => item.dt_txt.includes('12:00:00'));
 
-  const dayNames = ['day1-name', 'day2-name', 'day3-name'];
-  const dayTemps = ['day1-temp', 'day2-temp', 'day3-temp'];
+    const dayNames = ['day1-name', 'day2-name', 'day3-name'];
+    const dayTemps = ['day1-temp', 'day2-temp', 'day3-temp'];
 
-  const numDays = Math.min(3, noonForecasts.length);
+    const numDays = Math.min(3, noonForecasts.length);
 
-  for (let i = 0; i < numDays; i++) {
-      const forecast = noonForecasts[i];
-      
-      const date = new Date(forecast.dt * 1000);
-      const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+    for (let i = 0; i < numDays; i++) {
+        const forecast = noonForecasts[i];
 
-      const temp = `${forecast.main.temp.toFixed(0)}&deg;C`;
+        const date = new Date(forecast.dt * 1000);
+        const dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
 
-      document.getElementById(dayNames[i]).textContent = dayName;
-      document.getElementById(dayTemps[i]).innerHTML = temp;
-  }
+        const temp = `${forecast.main.temp.toFixed(0)}&deg;C`;
+
+        document.getElementById(dayNames[i]).textContent = dayName;
+        document.getElementById(dayTemps[i]).innerHTML = temp;
+    }
 }
 
 apiFetch();
@@ -130,21 +153,21 @@ function displaySpotlights(members) {
 
         // Set Attributes & Content
         // Assuming images are in an 'images/' folder. If your JSON has the full path, remove 'images/'
-        image.setAttribute("src", company.image); 
+        image.setAttribute("src", company.image);
         image.setAttribute("alt", `${company.name} logo`);
         image.setAttribute("loading", "lazy");
         image.setAttribute("width", "100");
         image.setAttribute("height", "100");
 
         name.textContent = company.name;
-        
+
         address.textContent = company.address;
-        
+
         phone.textContent = company.phone;
-        
+
         // Website: href works as the link, textContent displays the URL string
         website.setAttribute("href", company.website);
-        website.textContent = company.website; 
+        website.textContent = company.website;
         website.setAttribute("target", "_blank"); // Open in new tab
 
         // Membership Level (Convert number to text)
