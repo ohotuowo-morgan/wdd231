@@ -167,6 +167,32 @@ main {
     /* translate: Y(-5px); */
 }
 
+dialog {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: #fafafa;
+  box-shadow: 0 0 3rem #777;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style the close (X) button */
+dialog button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 /* footer */
 
 footer {

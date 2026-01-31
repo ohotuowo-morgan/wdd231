@@ -100,6 +100,10 @@ function createCourseCards(data) {
 
         card.appendChild(name);
 
+        card.addEventListener('click', () => {
+            displayCourseDetails(course);
+        });
+
         document.querySelector("#container").appendChild(card);
 
         // Calculate Total Credits (Only for Completed Courses)
@@ -135,3 +139,31 @@ buttons.forEach(btn => {
     });
 });
 
+const courseDetails = document.querySelector("#course-details");
+
+function displayCourseDetails(course) {
+    courseDetails.innerHTML = `
+        <button id="closeModal">❌</button>
+        <h2>${course.subject} ${course.number}</h2>
+        <h3>${course.title}</h3>
+        <p><strong>Credits</strong>: ${course.credits}</p>
+        <p><strong>Certificate</strong>: ${course.certificate}</p>
+        <p>${course.description}</p>
+        <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+    
+    courseDetails.showModal();
+
+    // Close Modal on Button Click
+    const closeModal = document.querySelector("#closeModal");
+    closeModal.addEventListener("click", () => {
+        courseDetails.close();
+    });
+}
+
+// Close Modal when clicking outside the box (on the backdrop)
+courseDetails.addEventListener("click", (event) => {
+    if (event.target === courseDetails) {
+        courseDetails.close();
+    }
+});

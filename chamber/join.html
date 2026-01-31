@@ -48,58 +48,56 @@
         </nav>
 
         <!-- <img src="images/sun.svg" alt="" class="theme" id="theme"> -->
-
-
-
     </header>
 
     <main>
-        <h1>Uyo Chamber of Commerce</h1>
+        <h1>Membership Application Form</h1>
 
-        <div class="hero" id="hero">
-            <img src="./images/hero.jpg" alt="hero image for chamber of commerce" class="heroimg" width="800"  height="500" loading="eager">
-            <button class="cta-btn">Join the Chamber!</button>
-        </div>
+        <form action="thankyou.html" method="get">
+            <label for="firstname">First Name</label>
+            <input type="text" name="firstname" id="firstname" required autocomplete="given-name">
 
-        <section class="weather-layout">
-            <div class="event card">
-                <h2>Events</h2>
-                <ul>
-                    <li>Annual Gala - December 12th</li>
-                    <li>Chamber Meetup - January 15th</li>
-                    <li>Chamber reunion - Ocotber 22nd</li>
-                </ul>
-            </div>
+            <label for="lastname">Last Name</label>
+            <input type="text" name="lastname" id="lastname" required autocomplete="family-name">
 
-            <div class="weather card">
-                <h2>Current Weather</h2>
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" title="" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}">
 
-                <div class="weather-card">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
 
-                    <div>
-                        <p id="current-temp"></p>
-                        <p id="weather-desc"></p>
-                        <p>High: <span id="high-temp"></span></p>
-                        <p>Low: <span id="low-temp"></span></p>
-                        <p>Humidity: <span id="humidity"></span></p>
-                        <p>Sunrise: <span id="sunrise"></span></p>
-                        <p>Sunset: <span id="sunset"></span></p>
-                    </div>
-                </div>
-            </div>
+            <label for="contact">Phone</label>
+            <input type="tel" name="tel" id="contact" required>
 
-            <div class="forecast card">
-                <h2>Weather Forecast</h2>
-                <p><span id="day1-name"></span>: <span id="day1-temp"></span></p>
-                <p><span id="day2-name"></span>: <span id="day2-temp"></span></p>
-                <p><span id="day3-name"></span>: <span id="day3-temp"></span></p>
-            </div>
+            <label for="org">Organization</label>
+            <input type="text" name="org" id="org" required>
 
-        </section>
+            <fieldset>
+                <legend>Membership Level</legend>
 
-        <div class="business-cards">
+                <label for="np">
+                    <input type="radio" name="level" value="np">
+                    NP Membership
+                </label>
 
-        </div>
+                <label for="bronze">
+                    <input type="radio" name="level" value="bronze">
+                    Bronze Membership
+                </label>
+
+                <label for="silver">
+                    <input type="radio" name="level" value="silver">
+                    Silver Membership
+                </label>
+
+                <label for="gold">
+                    <input type="radio" name="level" value="gold">
+                    Gold Membership
+                </label>
+            </fieldset>
+
+            <input type="submit" value="submit request">
+        </form>
     </main>
 
     <footer>

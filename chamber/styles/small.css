@@ -404,3 +404,19 @@ ul li {
     color: #888;
     margin-top: 1rem;
 }
+
+/* Form styling */
+
+form,
+fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+form{
+    max-width: 500px;
+}
+
+input{
+    margin-bottom: 1rem;
+}
