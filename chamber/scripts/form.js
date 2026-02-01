@@ -9,7 +9,7 @@ function setupModal(btnId, modalId) {
 
     // Open Modal
     btn.addEventListener("click", (event) => {
-        event.preventDefault(); // Prevent form submission if inside form (just in case)
+        event.preventDefault(); 
         modal.showModal();
     });
 

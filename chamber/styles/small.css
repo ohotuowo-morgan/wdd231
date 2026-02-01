@@ -505,7 +505,7 @@ input[type="submit"]:hover {
     margin-top: 2rem;
 }
 
-.card {
+.formcard {
     background-color: #eee;
     border: 1px solid #ccc;
     padding: 1.5rem;
@@ -514,7 +514,9 @@ input[type="submit"]:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.card h3 {
+.card .h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
     margin-top: 0;
 }
 
