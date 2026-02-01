@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="styles/larger.css">
 
     <!-- Scripts -->
-    <script src="scripts/home.js" defer></script>
+    <script src="scripts/form.js" defer></script>
 </head>
 
 <body>
@@ -53,51 +53,123 @@
     <main>
         <h1>Membership Application Form</h1>
 
-        <form action="thankyou.html" method="get">
-            <label for="firstname">First Name</label>
-            <input type="text" name="firstname" id="firstname" required autocomplete="given-name">
+        <div class="join-layout">
+            <form action="thankyou.html" method="get">
 
-            <label for="lastname">Last Name</label>
-            <input type="text" name="lastname" id="lastname" required autocomplete="family-name">
-
-            <label for="title">Title</label>
-            <input type="text" name="title" id="title" title="" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}">
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-
-            <label for="contact">Phone</label>
-            <input type="tel" name="tel" id="contact" required>
-
-            <label for="org">Organization</label>
-            <input type="text" name="org" id="org" required>
-
-            <fieldset>
-                <legend>Membership Level</legend>
-
-                <label for="np">
-                    <input type="radio" name="level" value="np">
-                    NP Membership
+                <label for="firstname">First Name
+                    <input type="text" name="firstname" id="firstname" required autocomplete="given-name">
                 </label>
 
-                <label for="bronze">
-                    <input type="radio" name="level" value="bronze">
-                    Bronze Membership
+                <label for="lastname">Last Name
+                    <input type="text" name="lastname" id="lastname" required autocomplete="family-name">
                 </label>
 
-                <label for="silver">
-                    <input type="radio" name="level" value="silver">
-                    Silver Membership
+                <label for="title">Organizational Title
+                    <input type="text" name="title" id="title" autocomplete="organization-title"
+                        pattern="[A-Za-z\s-]{7,}"
+                        title="Must be at least 7 characters (letters, hyphens, and spaces only)">
                 </label>
 
-                <label for="gold">
-                    <input type="radio" name="level" value="gold">
-                    Gold Membership
+                <label for="email">Email
+                    <input type="email" name="email" id="email" required autocomplete="email"
+                        placeholder="example@gmail.com">
                 </label>
-            </fieldset>
 
-            <input type="submit" value="submit request">
-        </form>
+                <label for="contact">Phone
+                    <input type="tel" name="phone" id="contact" required autocomplete="tel">
+                </label>
+
+                <label for="org">Organization
+                    <input type="text" name="org" id="org" required autocomplete="organization">
+                </label>
+
+                <fieldset>
+                    <legend>Membership Level</legend>
+
+                    <label for="np">
+                        <input type="radio" name="level" id="np" value="np" required>
+                        NP Membership (No Fee)
+                    </label>
+
+                    <label for="bronze">
+                        <input type="radio" name="level" id="bronze" value="bronze">
+                        Bronze Membership
+                    </label>
+
+                    <label for="silver">
+                        <input type="radio" name="level" id="silver" value="silver">
+                        Silver Membership
+                    </label>
+
+                    <label for="gold">
+                        <input type="radio" name="level" id="gold" value="gold">
+                        Gold Membership
+                    </label>
+                </fieldset>
+
+                <label for="description">Business Description
+                    <textarea name="description" id="description" title="Describe your organization"
+                        rows="4"></textarea>
+                </label>
+
+                <input type="hidden" name="timestamp" id="timestamp" value="">
+
+                <input type="submit" value="Join the Chamber">
+            </form>
+
+            <div class="membership-cards">
+                <section class="card animate-card">
+                    <h3>NP Membership</h3>
+                    <p>For non-profit organizations.</p>
+                    <button id="np-btn">Learn More</button>
+                </section>
+
+                <section class="card animate-card">
+                    <h3>Bronze Membership</h3>
+                    <p>Basic business visibility.</p>
+                    <button id="bronze-btn">Learn More</button>
+                </section>
+
+                <section class="card animate-card">
+                    <h3>Silver Membership</h3>
+                    <p>Enhanced marketing & events.</p>
+                    <button id="silver-btn">Learn More</button>
+                </section>
+
+                <section class="card animate-card">
+                    <h3>Gold Membership</h3>
+                    <p>Premium positioning & access.</p>
+                    <button id="gold-btn">Learn More</button>
+                </section>
+            </div>
+
+        </div>
+
+        <dialog id="np-modal">
+            <button class="close-modal">❌</button>
+            <h2>Non-Profit Membership</h2>
+            <p>Free for all registered non-profits. Includes listing in the directory and access to monthly training.
+            </p>
+        </dialog>
+
+        <dialog id="bronze-modal">
+            <button class="close-modal">❌</button>
+            <h2>Bronze Membership</h2>
+            <p>Cost: $100/yr. Includes basic directory listing and 2 event tickets.</p>
+        </dialog>
+
+        <dialog id="silver-modal">
+            <button class="close-modal">❌</button>
+            <h2>Silver Membership</h2>
+            <p>Cost: $200/yr. Includes spotlight feature and 5 event tickets.</p>
+        </dialog>
+
+        <dialog id="gold-modal">
+            <button class="close-modal">❌</button>
+            <h2>Gold Membership</h2>
+            <p>Cost: $300/yr. Premium homepage spotlight and unlimited training access.</p>
+        </dialog>
+        
     </main>
 
     <footer>

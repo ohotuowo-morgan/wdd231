@@ -407,16 +407,165 @@ ul li {
 
 /* Form styling */
 
-form,
-fieldset{
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #0000001a; 
+}
+
+label {
+    display: block;       
+    margin-bottom: 1.5rem; 
+    color: var(--primary-color); 
+    font-weight: 600;   
+    font-size: 0.95rem;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    display: block;       
+    width: 100%;          
+    padding: 0.75rem;     
+    margin-top: 0.5rem;   
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; 
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color); 
+    box-shadow: 0 0 5px rgba(248, 171, 56, 0.5);
+}
+
+fieldset {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+fieldset label {
+    display: flex;         
+    align-items: center;   
+    gap: 10px;             
+    margin-bottom: 0.5rem;
+    font-weight: normal;   
+    cursor: pointer;       
+}
+
+input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color); 
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    margin-top: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-color); 
+    color: var(--primary-color); 
+    transform: scale(1.02); 
+}
+
+/* Container for the cards */
+.membership-cards {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
 }
 
-form{
-    max-width: 500px;
+.card {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-input{
-    margin-bottom: 1rem;
+.card h3 {
+    margin-top: 0;
+}
+
+/* THE ANIMATION: Fade in from bottom */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-card {
+    animation: slideIn 0.8s ease-out forwards;
+    opacity: 0; 
+}
+
+/* Stagger the animation so they pop in one by one */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+/* MODAL STYLING (Reuse your previous modal CSS) */
+dialog {
+    border: none;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width: 90%;
+}
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+#results{
+    text-align: center;
+}
+
+#results p{
+    padding-bottom: 1rem;
 }

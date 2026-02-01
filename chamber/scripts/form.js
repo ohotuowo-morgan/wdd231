@@ -1,0 +1,35 @@
+document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
+
+// form timestamp
+function setupModal(btnId, modalId) {
+    const btn = document.getElementById(btnId);
+    const modal = document.getElementById(modalId);
+    const closeBtn = modal.querySelector(".close-modal");
+
+    // Open Modal
+    btn.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent form submission if inside form (just in case)
+        modal.showModal();
+    });
+
+    // Close Modal (X button)
+    closeBtn.addEventListener("click", () => {
+        modal.close();
+    });
+
+    // Close Modal (Click outside)
+    modal.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.close();
+        }
+    });
+}
+
+setupModal("np-btn", "np-modal");
+setupModal("bronze-btn", "bronze-modal");
+setupModal("silver-btn", "silver-modal");
+setupModal("gold-btn", "gold-modal");
+
+// Set the timestamp (Required from previous step)
+document.getElementById("timestamp").value = new Date().toISOString();

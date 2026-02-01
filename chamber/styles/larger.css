@@ -1,6 +1,6 @@
 /* Black - #000000ff
 Brownish yellow - #f8ab38ff */
-@media only screen and (min-width: 38rem) {
+@media only screen and (min-width: 45rem) {
 
     :root {
         --primary-color: #1f1f1f;
@@ -86,5 +86,21 @@ Brownish yellow - #f8ab38ff */
     .business-cards {
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
+    }
+
+    .join-layout {
+        display: flex;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    form{
+        width: 800px;
+    }
+    
+    .membership-cards {
+        width: 600px;
+        margin-top: 1rem;
     }
 }
