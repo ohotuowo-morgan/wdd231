@@ -101,6 +101,10 @@ footer{
         font-size: 24px;
     }
 
+    .intro{
+        text-align: center;
+    }
+
     .intro h1 {
         font-size: 1.6rem;
     }
@@ -111,5 +115,10 @@ footer{
 
     section {
         padding-bottom: 2.5rem;
+    }
+
+    .wireframe img{
+        width: 300px;
+        height: 400px;
     }
 }
