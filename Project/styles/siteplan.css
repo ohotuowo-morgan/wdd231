@@ -93,7 +93,7 @@ footer{
     }
 
     header {
-        flex-direction: column;
+        flex-direction: row;
         padding: 1.5rem;
     }
 
