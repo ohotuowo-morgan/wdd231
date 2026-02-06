@@ -575,3 +575,8 @@ dialog::backdrop {
     padding-bottom: 1rem;
     text-align: left;
 }
+
+.discovery-container {
+    display: grid;
+    grid-template-areas: ;
+}
