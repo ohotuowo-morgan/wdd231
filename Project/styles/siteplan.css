@@ -29,7 +29,6 @@ main{
     display: flex;
     flex-direction: column  ;
     justify-content: center;
-    /* align-items: center; */
     padding: 0 8rem;
 }
 
@@ -42,7 +41,6 @@ h2{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 80%; */
     border-bottom: 4px solid var(--accent2);
     margin-bottom: 2rem;
 }
@@ -61,11 +59,6 @@ section{
     padding-bottom: 3rem;
 }
 
-.purpose{
-    max-width: 80%;
-    /* text-align: left; */
-    line-height: 1.2;
-}
 
 .scenario li{
     font-weight: bolder;
@@ -92,4 +85,31 @@ footer{
     color: var(--accent2);
     font-size: 16px;
     padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        padding: 0 1.5rem; /* Remove heavy side padding */
+    }
+
+    header {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    header p {
+        font-size: 24px;
+    }
+
+    .intro h1 {
+        font-size: 1.6rem;
+    }
+
+    .intro h2 {
+        font-size: 1.2rem;
+    }
+
+    section {
+        padding-bottom: 2.5rem;
+    }
 }
