@@ -1,6 +1,14 @@
 document.getElementById("currentyear").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
+// variables
+const hamburger = document.getElementById("hamburger");
+const navigation = document.getElementById("navigation");
+hamburger.addEventListener("click", ()=>{
+    hamburger.classList.toggle("active");
+    navigation.classList.toggle("open");
+});
+
 // form timestamp
 function setupModal(btnId, modalId) {
     const btn = document.getElementById(btnId);

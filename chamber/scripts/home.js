@@ -1,6 +1,14 @@
 document.getElementById("currentyear").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = `Last Modified: ${document.lastModified}`;
 
+// variables
+const hamburger = document.getElementById("hamburger");
+const navigation = document.getElementById("navigation");
+hamburger.addEventListener("click", ()=>{
+    hamburger.classList.toggle("active");
+    navigation.classList.toggle("open");
+});
+
 // Api fetch call
 const lat = "5.037794871777592"
 const lon = "7.91289974164656"

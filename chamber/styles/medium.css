@@ -1,0 +1,6 @@
+@media only screen and (min-width: 35rem){
+    .discovery-container {
+        grid-template-columns: 1fr;
+        max-width: 1200px;
+    }
+}
