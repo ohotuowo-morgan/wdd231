@@ -595,7 +595,7 @@ dialog::backdrop {
 .discovery-container {
     display: grid;
     grid-template-columns: 1fr;
-    /* place-items: center; */
+    min-height: 100vh;
     padding: 1rem;
     gap: 14px;
 }

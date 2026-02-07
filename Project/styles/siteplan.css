@@ -25,6 +25,11 @@ header p{
     font-weight: 700;
 }
 
+header img{
+    width: 100px;
+    height: 100px;
+}
+
 main{
     display: flex;
     flex-direction: column  ;
