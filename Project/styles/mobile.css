@@ -1,0 +1,99 @@
+@media only screen and (max-width: 780px) {
+    :root {
+        --primary-color: #0F172A;
+        /*The main page background.*/
+        --secondary-color: #F8FAFC;
+        /*Main headings, body text.*/
+        --accent1: #10B981;
+        /* Price Up percentages and successful "Buy" buttons.*/
+        --accent2: #8B5CF6;
+        /*Branding, call-to-action buttons, or active navigation links*/
+        --accent3: #ff0000;
+        /* Price down */
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .logo-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    input[type="search"] {
+        display: none;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        cursor: pointer;
+    }
+
+    .hamburger span,
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: var(--accent2);
+        margin: 5px 0;
+        transition: 0.5s ease;
+
+    }
+
+    .hamburger.active::before {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span {
+        opacity: 0;
+    }
+
+    .hamburger.active::after {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav.open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 1rem;
+        gap: 30px;
+        border-top: .5px solid var(--accent1);
+    }
+
+    .todays-Mover {
+        gap: 12px;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3),
+
+    th:nth-child(5),
+    td:nth-child(5),
+    /* 24h */
+    th:nth-child(6),
+    td:nth-child(6),
+    /* Market Cap */
+    th:nth-child(7),
+    td:nth-child(7),
+
+    th:nth-child(8),
+    td:nth-child(8)
+
+    /* Volume */
+        {
+        display: none;
+    }
+}

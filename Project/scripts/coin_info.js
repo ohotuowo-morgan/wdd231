@@ -18,6 +18,8 @@ async function apiFetch() {
 
             displayTable(data.slice(0, 10));
 
+            displayTopGainers(data);
+
         } else {
             throw Error(await response.text());
         }
@@ -27,37 +29,32 @@ async function apiFetch() {
     }
 }
 
-// Function to draw the mini-chart
 function generateSparkline(prices) {
     if (!prices || prices.length === 0) return '';
-    
-    // 1. Setup dimensions
-    const width = 100;  
-    const height = 30;  // Height of the chart in pixels
-    
-    // 2. Find min and max prices to scale the chart
+
+    const width = 100;
+    const height = 30;
+
     const minPrice = Math.min(...prices);
     const maxPrice = Math.max(...prices);
     const range = maxPrice - minPrice;
-    
-    // 3. Create the "points" string for the SVG polyline
+
     // We map each price to a coordinate (X, Y)
     const points = prices.map((price, index) => {
         const x = (index / (prices.length - 1)) * width; // Spread points across width
-        
+
         // Calculate Y (Invert it because SVG 0 is at the top)
         // We add a tiny buffer (5%) so the line doesn't get cut off at the edges
-        const y = height - ((price - minPrice) / range) * height; 
+        const y = height - ((price - minPrice) / range) * height;
         return `${x},${y}`;
     }).join(' ');
 
-    // 4. Determine color (Green if up over 7 days, Red if down)
     const isUp = prices[prices.length - 1] >= prices[0];
     const color = isUp ? '#10B981' : '#ff0000'; // Emerald or Red
 
     // 5. Return the HTML string
     return `
-        <svg width="${width}" height="${height}" fill="none"  stroke-width="2" stroke="${color}">
+        <svg width="${width}" height="${height}" fill="none"  stroke-width="1" stroke="${color}">
             <polyline points="${points}" />
         </svg>
     `;
@@ -86,7 +83,7 @@ function displayTicker(coins) {
 
 function displayTable(coins) {
     const tableBody = document.querySelector(".crypto-table-body");
-    tableBody.innerHTML  = "";
+    tableBody.innerHTML = "";
 
     coins.forEach(coin => {
         const row = document.createElement("tr");
@@ -112,8 +109,45 @@ function displayTable(coins) {
     })
 }
 
+function displayTopGainers(coins) {
+    // DOM vairables
+    const topMover = document.querySelector(".top-gainer");
+    const topCap = document.querySelector(".top-market-cap");
+    const topPrice = document.querySelector(".top-price");
+
+    // Sort the Top gainer
+    const sortedByGain = [...coins].sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
+    const topGainer = sortedByGain[0];
+    const topLoser = sortedByGain[sortedByGain.length - 1];
+
+
+    const priceChange = topGainer.price_change_percentage_24h;
+    const isPositive = topGainer.price_change_percentage_24h >= 0;
+    const colorClass = isPositive ? "up" : "down";
+    const arrow = isPositive ? '▲' : '▼';
+
+    coins.forEach(coin => {
+        const sparklineHTML = generateSparkline(coin.sparkline_in_7d.price);
+
+        topMover.classList.add(`${priceChange >= 0 ? 'up' : 'down'}`)
+        topMover.innerHTML = `${topGainer.name} 
+                            <span class="${priceChange >= 0 ? 'up' : 'down'}">
+                                ${priceChange.toFixed(2)}%
+                                ${arrow}
+                            </span>
+                            <span class="chart-cell">${sparklineHTML}</span>`;
+    });
+
+    topCap.innerHTML = `$ ${topGainer.market_cap.toLocaleString()}`
+    topPrice.innerHTML = `$ ${topGainer.current_price.toLocaleString()}
+    <span class="${priceChange >= 0 ? 'up' : 'down'}">
+                                + ${priceChange.toFixed(2)}%
+                            </span>`;
+
+}
+
 // setInterval(()=>{
 //     apiFetch();
 //     console.log("Updated market data...");
-// }, 10000)
+// }, 6000)
 apiFetch();

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="./styles/mobile.css">
 
     <script src="./scripts/coin_info.js" defer></script>
+    <script src="./scripts/home.js" defer></script>
 
 </head>
 
@@ -34,8 +35,10 @@
     <header>
         <div class="logo-section">
             <img class="logo-img" src="./images/Coin.png" alt="CoinPulse logo" width="100" height="100">
-            <p>CoinPulse</p>
+            <p class="logo-text">CoinPulse</p>
         </div>
+
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
 
         <nav class="navigation">
             <a href="./index.html" class="active">Home</a>
@@ -44,23 +47,38 @@
         </nav>
 
         <input type="search" name="search" placeholder="Search">
+
+
     </header>
 
     <main>
         <div class="ticker-head">
             <strong>Top Movers Today</strong>
             <div class="ticker-container">
-                 <span class="ticker-track">Lastest trending coinss</span>
+                <span class="ticker-track">Lastest trending coinss</span>
             </div>
         </div>
 
 
-        <section class="topMovers">
+        <div class="todays-Mover">
+            <div class="top Gainer">
+                <p>Top Gainer</p>
+                <p class="top-gainer"><span class="percent-increase"></span></p>
+            </div>
 
-        </section>
+            <div class="top MarketCap ">
+                <p>Global Market Cap</p>
+                <p class="top-market-cap"></p>
+            </div>
+
+            <div class="top Price">
+                <p>Price Today</p>
+                <p class="top-price"></p>
+            </div>
+        </div>
 
         <section class="table-container">
-            <p>Market Overview</p>
+            <!-- <p>Market Overview</p> -->
             <table>
                 <!-- <caption>Market Overview</caption> -->
                 <thead>
@@ -86,7 +104,10 @@
     </main>
 
     <footer>
-
+        <div class="copy">
+            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> CoinPulse</p>
+            <p id="lastModified"></p>
+        </div>
     </footer>
 
 </body>

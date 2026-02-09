@@ -12,17 +12,24 @@
 }
 
 * {
-    background-color: var(--primary-color);
     color: var(--secondary-color);
     font-family: "Raleway", sans-serif;
+}
+
+body{
+    background-color: var(--primary-color);
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1.8rem 1rem 0;
+    padding: 0 1.8rem 0 0;
     /* background-color: #131722; */
+}
+
+.hamburger{
+    display: none;
 }
 
 .logo-section {
@@ -30,12 +37,17 @@ header {
     align-items: center;
 }
 
+.logo-text{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
 input[type="search"] {
     padding: .5rem;
     border-radius: 6px;
     border: .1px solid var(--accent2);
     transition: 0.5s ease;
-
+    background-color: var(--primary-color);
 }
 
 input[type="search"]:hover {
@@ -55,6 +67,7 @@ nav a {
 
 main {
     padding: 1rem 4rem;
+    padding-top: 0;
 }
 
 /* Ticker Container */
@@ -74,7 +87,7 @@ main {
     padding: 12px 0;
     white-space: nowrap;
     position: relative;
-    border: .3px solid var(--accent2);
+    /* border: .3px solid var(--accent2); */
     border-radius: 6px;
 }
 
@@ -96,30 +109,55 @@ main {
 .down { color: var(--accent3); }  
 
 
-/* The actual "Move" logic */
+/*"Move" logic */
 @keyframes scroll-ticker {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
 
+/* Top Cards */
+.todays-Mover{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0 3rem;
+}
+
+.top{
+    padding: 1rem;
+    margin: 0 auto;
+    background-color: #232d43;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    min-width: 300px;
+    min-height: 200px;
+}
+
+.top p{
+    font-size: 24px;
+    font-weight: 700;
+}
+
 .table-container {
     /* border-radius: 12px; */
-    padding: 1rem;
+    padding: 0;
     /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
-    /* border: 1px solid #2a2e39; */
+    border: 1px solid #2a2e39;
+    border-radius: 12px;
 }
 
 table {
     /* border-radius: 12px; */
+    /* background-color: #131722; */
+    /* border-radius: 12px; */
+    /* border: 1px solid #2a2e39; */
     width: 100%;
     margin: 10px auto;
-    /* background-color: #131722; */
     border-collapse: separate;
-    /* border-spacing: 0; */
-    border-radius: 12px;
+    border-spacing: 0;
     color: var(--secondary-color);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid #2a2e39;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
+    height: 100vh;
 }
 
 thead th{
@@ -199,4 +237,13 @@ polyline {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+footer{
+    text-align: center;
+}
+
+.copy p,
+.copy p span{
+    color: var(--accent2);
 }
