@@ -1,0 +1,202 @@
+:root {
+    --primary-color: #0F172A;
+    /*The main page background.*/
+    --secondary-color: #F8FAFC;
+    /*Main headings, body text.*/
+    --accent1: #10B981;
+    /* Price Up percentages and successful "Buy" buttons.*/
+    --accent2: #8B5CF6;
+    /*Branding, call-to-action buttons, or active navigation links*/
+    --accent3: #ff0000;
+    /* Price down */
+}
+
+* {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: "Raleway", sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.8rem 1rem 0;
+    /* background-color: #131722; */
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+input[type="search"] {
+    padding: .5rem;
+    border-radius: 6px;
+    border: .1px solid var(--accent2);
+    transition: 0.5s ease;
+
+}
+
+input[type="search"]:hover {
+    border: 1px solid var(--accent1);
+}
+
+nav {
+    display: flex;
+    gap: 80px;
+    padding: 0 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 1rem 4rem;
+}
+
+/* Ticker Container */
+.ticker-head{
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.ticker-head strong{
+    padding: 1rem;
+}
+.ticker-container {
+    /* width: 90%; */
+    overflow: hidden;
+    padding: 12px 0;
+    white-space: nowrap;
+    position: relative;
+    border: .3px solid var(--accent2);
+    border-radius: 6px;
+}
+
+.ticker-track {
+    display: inline-block;
+    white-space: nowrap;
+
+    animation: scroll-ticker 40s linear infinite; /* Adjust for speed */
+}
+
+.ticker-item {
+    display: inline-block;
+    margin: 0 30px;
+    font-weight: 700;
+}
+
+/* Color Classes */
+.up { color: var(--accent1); }    
+.down { color: var(--accent3); }  
+
+
+/* The actual "Move" logic */
+@keyframes scroll-ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.table-container {
+    /* border-radius: 12px; */
+    padding: 1rem;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
+    /* border: 1px solid #2a2e39; */
+}
+
+table {
+    /* border-radius: 12px; */
+    width: 100%;
+    margin: 10px auto;
+    /* background-color: #131722; */
+    border-collapse: separate;
+    /* border-spacing: 0; */
+    border-radius: 12px;
+    color: var(--secondary-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #2a2e39;
+}
+
+thead th{
+    padding: 1rem;
+}
+
+th,
+td {
+    padding: 0.6rem;
+}
+
+th:nth-child(3), td:nth-child(3),
+th:nth-child(4), td:nth-child(4), /* Price */
+th:nth-child(5), td:nth-child(5), /* 24h */
+th:nth-child(6), td:nth-child(6), /* Market Cap */
+th:nth-child(7), td:nth-child(7)  /* Volume */
+{
+    text-align: right;
+}
+
+tbody td {
+    /* display: flex; */
+    flex-direction: row;
+    /* align-items: center; */
+    padding: 1rem;
+    /* vertical-align: middle; */
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* --- Specific Column Styling --- */
+
+/* The Name Column (Image + Text) */
+.coin-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.coin-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.coin-symbol {
+    color: #787b86;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+/* --- Price Change Colors --- */
+.positive {
+    color: var(--accent1);
+}
+
+.negative {
+    color:var(--accent3); 
+}
+
+.chart-cell {
+    width: 120px;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+/* Optional: Make the line glow slightly */
+polyline {
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
+}
+
+.cry-logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

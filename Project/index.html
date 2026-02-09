@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinPulse Dashboard</title>
+    <meta name="description"
+        content="CoinPulse dashboard page featuring 'Top Movers' ticker and a live overview of the top 10 cryptocurrencies by market cap, with visual indicators (green/red) for 24-hour price changes.">
+    <meta name="author" content="Ohotuowo Morgan Agrinya ">
+
+    <meta property="og:title" content="CoinPulse Dashboard">
+    <meta property="og:description"
+        content="CoinPulse dashboard page featuring 'Top Movers' ticker and a live overview of the top 10 cryptocurrencies by market cap, with visual indicators (green/red) for 24-hour price changes.">
+    <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/Project/images/Coin.png">
+    <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/Project/index.html">
+
+    <link rel="icon" href="./images/CoinPulse.svg" width="100">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/desktop.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+
+    <script src="./scripts/coin_info.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-section">
+            <img class="logo-img" src="./images/Coin.png" alt="CoinPulse logo" width="100" height="100">
+            <p>CoinPulse</p>
+        </div>
+
+        <nav class="navigation">
+            <a href="./index.html" class="active">Home</a>
+            <a href="./explorer.html">Explorer</a>
+            <a href="./portfolio.html">Portfolio</a>
+        </nav>
+
+        <input type="search" name="search" placeholder="Search">
+    </header>
+
+    <main>
+        <div class="ticker-head">
+            <strong>Top Movers Today</strong>
+            <div class="ticker-container">
+                 <span class="ticker-track">Lastest trending coinss</span>
+            </div>
+        </div>
+
+
+        <section class="topMovers">
+
+        </section>
+
+        <section class="table-container">
+            <p>Market Overview</p>
+            <table>
+                <!-- <caption>Market Overview</caption> -->
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th style="text-align: left;">Name</th>
+                        <th>Symbol</th>
+                        <th>Price</th>
+                        <th>24h Change</th>
+                        <th>Market Cap</th>
+                        <th>Volume</th>
+                        <th>Last 7 days</th>
+                    </tr>
+                </thead>
+                <tbody class="crypto-table-body">
+
+                </tbody>
+            </table>
+
+        </section>
+
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
