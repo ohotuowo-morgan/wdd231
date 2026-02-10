@@ -1,6 +1,5 @@
 // Api Variables
-// /simple/price
-// /coins/markets
+
 const apikey = "CG-zLtbuPm5XcgHWfVHsqWK8Wgh"
 const url = `https://api.coingecko.com/api/v3/`
 
@@ -91,6 +90,21 @@ function displayTable(coins) {
 
         const sparklineHTML = generateSparkline(coin.sparkline_in_7d.price);
 
+        // Function to format the number
+        const formatCompactNumber = (number) => {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                notation: 'compact',
+                compactDisplay: 'short', // Use 'short' for T, B, M
+                maximumFractionDigits: 2
+            }).format(number);
+        };
+
+        // Example usage inside your loop:
+        const marketCap = formatCompactNumber(coin.market_cap);
+        // Output: "$1.23T"
+
         row.innerHTML = `
         
         <td>${coin.market_cap_rank}</td>
@@ -100,7 +114,7 @@ function displayTable(coins) {
         <td class="${priceChange >= 0 ? 'up' : 'down'}">
             ${priceChange.toFixed(2)}%
         </td>
-        <td>${coin.market_cap.toLocaleString()}</td>
+        <td>${marketCap}</td>
         <td>${coin.total_volume.toLocaleString()}</td>
         <td class="chart-cell}">${sparklineHTML}</td>
         `;
@@ -138,7 +152,22 @@ function displayTopGainers(coins) {
                             <span class="chart-cell">${sparklineHTML}</span>`;
     });
 
-    topCap.innerHTML = `$ ${topGainer.market_cap.toLocaleString()}`
+    // Function to format the number
+    const formatCompactNumber = (number) => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            notation: 'compact',
+            compactDisplay: 'short', // Use 'short' for T, B, M
+            maximumFractionDigits: 2
+        }).format(number);
+    };
+
+    // Example usage inside your loop:
+    const marketCap = formatCompactNumber(topGainer.market_cap);
+    // Output: "$1.23T"
+
+    topCap.innerHTML = `${marketCap}`
     topPrice.innerHTML = `$ ${topGainer.current_price.toLocaleString()}
     <span class="${priceChange >= 0 ? 'up' : 'down'}">
                                 + ${priceChange.toFixed(2)}%

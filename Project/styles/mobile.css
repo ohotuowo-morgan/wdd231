@@ -16,6 +16,24 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        padding-right: .8rem;
+        border-bottom: .3px solid var(--accent2);
+        transition: 0.5s ease-in-out;
+    }
+
+    .ticker-head {
+        padding-top: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ticker-container{
+        width: 100%;
+    }
+
+    .ticker-head strong {
+        font-size: 1.5rem;
+        padding: 0;
     }
 
     .logo-img {
@@ -68,32 +86,91 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-top: 1rem;
+        padding: 1rem;
         gap: 30px;
-        border-top: .5px solid var(--accent1);
+        /* border: .5px solid var(--accent2); */
+        /* border-radius: 12px; */
+    }
+
+    header:has(nav.open) {
+        border: none;
+    }
+
+    nav a {
+        border-bottom: .5px solid var(--accent2);
+        padding-bottom: 5px;
     }
 
     .todays-Mover {
         gap: 12px;
     }
 
+    .top {
+        min-height: 100px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+        position: relative;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+    }
+
+    thead th{
+        white-space: nowrap;
+    }
+    
     th:nth-child(3),
     td:nth-child(3),
-
-    th:nth-child(5),
-    td:nth-child(5),
+    /* th:nth-child(5), */
+    /* td:nth-child(5), */
     /* 24h */
-    th:nth-child(6),
-    td:nth-child(6),
+    /* th:nth-child(6), */
+    /* td:nth-child(6), */
     /* Market Cap */
     th:nth-child(7),
     td:nth-child(7),
-
     th:nth-child(8),
     td:nth-child(8)
 
     /* Volume */
         {
         display: none;
+    }
+
+    /* th:nth-child(1),
+    td:nth-child(1) {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        min-width: 40px;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        position: sticky;
+        left: 30px;
+        z-index: 2;
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+
+    }
+
+    thead th:nth-child(1),
+    thead th:nth-child(2) {
+        z-index: 5;
+    } */
+
+    main {
+        padding: 1rem;
+
     }
 }
