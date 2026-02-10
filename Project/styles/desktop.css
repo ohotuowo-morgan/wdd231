@@ -226,6 +226,10 @@ tbody td {
     vertical-align: middle;
 }
 
+.gainer{
+    margin-bottom: 1rem;
+}
+
 /* Optional: Make the line glow slightly */
 polyline {
     stroke-linecap: round;

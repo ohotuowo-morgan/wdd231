@@ -116,7 +116,7 @@ function displayTable(coins) {
         </td>
         <td>${marketCap}</td>
         <td>${coin.total_volume.toLocaleString()}</td>
-        <td class="chart-cell}">${sparklineHTML}</td>
+        <td class="chart-cell">${sparklineHTML}</td>
         `;
 
         tableBody.appendChild(row);
@@ -144,12 +144,13 @@ function displayTopGainers(coins) {
         const sparklineHTML = generateSparkline(coin.sparkline_in_7d.price);
 
         topMover.classList.add(`${priceChange >= 0 ? 'up' : 'down'}`)
-        topMover.innerHTML = `${topGainer.name} 
-                            <span class="${priceChange >= 0 ? 'up' : 'down'}">
+        topMover.innerHTML = `
+                            <p class="gainer ${priceChange >= 0 ? 'up' : 'down'}">
+                                ${topGainer.name}
                                 ${priceChange.toFixed(2)}%
                                 ${arrow}
-                            </span>
-                            <span class="chart-cell">${sparklineHTML}</span>`;
+                            </p>
+                            <span class="chart">${sparklineHTML}</span>`;
     });
 
     // Function to format the number
