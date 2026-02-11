@@ -44,9 +44,10 @@
             <a href="./index.html" class="active">Home</a>
             <a href="./explorer.html">Explorer</a>
             <a href="./portfolio.html">Portfolio</a>
+            <input type="search" name="search"  class="search" placeholder="Search">
         </nav>
 
-        <input type="search" name="search" placeholder="Search">
+        <input type="search" name="search"  id="search"  placeholder="Search">
 
 
     </header>
@@ -62,12 +63,13 @@
 
         <div class="todays-Mover">
             <div class="top Gainer">
-                <p>Top Gainer</p>
+                <p id="gainer-name">Top Gainer</p>
                 <p class="top-gainer"><span class="percent-increase"></span></p>
             </div>
 
             <div class="top MarketCap ">
                 <p>Global Market Cap</p>
+                <p class="rank"></p>
                 <p class="top-market-cap"></p>
             </div>
 
@@ -99,7 +101,11 @@
             </table>
 
         </section>
-
+        <div id="pagination-wrapper" class="pagination-container">
+            <button id="prev-btn">Previous</button>
+            <span id="page-info">Page 1 of 10</span>
+            <button id="next-btn">Next</button>
+        </div>
 
     </main>
 
