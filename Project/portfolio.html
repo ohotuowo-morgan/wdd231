@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <meta name="description"
+        content="Track and manage your crypto holdings with CoinPulse My Portfolio. Add assets, save them locally, and see your total portfolio value update in real time using live market prices.">
+    <meta name="author" content="Ohotuowo Morgan Agrinya ">
+
+    <meta property="og:title" content="CoinPulse Explorer">
+    <meta property="og:description"
+        content="Track and manage your crypto holdings with CoinPulse My Portfolio. Add assets, save them locally, and see your total portfolio value update in real time using live market prices.">
+    <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/Project/images/Coin.png">
+    <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/Project/portfolio.html">
+
+    <link rel="icon" href="./images/CoinPulse.svg" width="100">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/portfolio.css">
+    <link rel="stylesheet" href="./styles/portfolio_mobile.css">
+
+    <script type="module" src="./scripts/portfoilio.js"></script>
+    <script src="./scripts/home.js" defer></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="logo-section">
+            <img class="logo-img" src="./images/Coin.png" alt="CoinPulse logo" width="100" height="100">
+            <p class="logo-text">CoinPulse</p>
+        </div>
+
+        <button id="hamburger" class="hamburger" aria-label="hamburger menu"><span></span></button>
+
+        <nav class="navigation">
+            <a href="./index.html">Home</a>
+            <a href="./explorer.html">Explorer</a>
+            <a href="./portfolio.html" class="active">Portfolio</a>
+            <input type="search" name="search" class="search" placeholder="Search">
+        </nav>
+
+        <input type="search" name="search" id="search" placeholder="Search">
+
+
+    </header>
+
+    <main>
+
+        <section class="portfolio-hero">
+            <div class="hero-left">
+                <p class="label">Total Balance</p>
+                <h1 class="main-balance" id="total-balance">$0.00</h1>
+            </div>
+
+            <div class="hero-right">
+                <div class="stat-item">
+                    <p class="label">24h Profit/Loss</p>
+                    <p class="stat-value" id="total-profit">-</p>
+                </div>
+                <div class="stat-item"> 
+                    <p class="label">Assets</p>
+                    <p class="stat-value" id="asset-count">0 Coins</p>
+                </div>
+            </div>
+
+            <!-- <button class="add-asset-btn-hero">+ Add Asset</button> -->
+        </section>
+
+        <h2>Your Assets</h2>
+
+        <div class="container">
+            <section class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th style="text-align: left;">Name</th>
+                            <th>Amount Held</th>
+                            <th>Current Price</th>
+                            <th>Value</th>
+                            <th>24h Change</th>
+                            <th>Allocation</th>
+                        </tr>
+                    </thead>
+                    <tbody class="crypto-table-body">
+
+                    </tbody>
+                </table>
+            </section>
+
+            <form action="" method="get"  id="add-asset-form">
+                <legend>Add Assets</legend>
+
+                <label for="coin">Coin
+                    <select name="coin" id="coin" required>
+                        <option value="" disabled selected>Select Coin</option>
+                    </select>
+                </label>
+
+                <label for="Amount held">Amount held
+                    <input type="number" name="amount" id="amount" step="any" min="0">
+                </label>
+
+                <input type="submit" value="Add to Portfolio">
+            </form>
+
+        </div>
+        <!-- <div id="pagination-wrapper" class="pagination-container">
+            <button id="prev-btn">Previous</button>
+            <span id="page-info">Page 1 of 10</span>
+            <button id="next-btn">Next</button>
+        </div> -->
+
+    </main>
+
+    <footer>
+        <div class="copy">
+            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> CoinPulse</p>
+            <p id="lastModified"></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

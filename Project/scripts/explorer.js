@@ -1,23 +1,17 @@
 import { fetchCoinData } from "./api.mjs";
 
-// Api Variables
-const searchInput = document.querySelectorAll('input[type="search"]');
-
 let allCoins = [];
 let currentCoins = [];
 let currentPage = 1;
 const rowsPerPage = 10;
 
+async function initExplorer() {
 
-async function apiFetch() {
-    
     const data = await fetchCoinData();
-    console.log(data);
     allCoins = data;
     currentCoins = data;
-    displayTicker(data);
-    displayTopGainers(data);
-    setupPagination();
+    setUpPagination();
+    setUpFilters();
     renderPage();
 
 }
@@ -26,8 +20,45 @@ function renderPage() {
     const start = (currentPage - 1) * rowsPerPage;
     const end = start + rowsPerPage;
     const paginatedItems = currentCoins.slice(start, end);
+
     displayTable(paginatedItems);
     updatePaginationControls();
+}
+
+function setUpFilters() {
+    const price = document.querySelector(".price");
+    const vol = document.querySelector(".vol");
+    const marketCap = document.querySelector(".market");
+    const btnContainer = document.querySelectorAll(".filter-btn");
+    const items = [...btnContainer];
+
+    items.forEach(item => {
+        item.addEventListener("click",  (e) => {
+
+            items.forEach(btn => btn.classList.remove("active-filter"))
+            // this.classList.add("active-filter");
+            e.currentTarget.classList.add('active-filter')
+        });
+    });
+
+    price.addEventListener("click", () => {
+        currentCoins.sort((a, b) => b.current_price - a.current_price);
+        currentPage = 1;
+        renderPage();
+    });
+
+    vol.addEventListener("click", () => {
+        currentCoins.sort((a, b) => b.total_volume - a.total_volume);
+        currentPage = 1;
+        renderPage();
+    });
+
+    marketCap.addEventListener("click", () => {
+        currentCoins.sort((a, b) => a.market_cap_rank - b.market_cap_rank);
+        currentPage = 1;
+        renderPage();
+    });
+
 }
 
 function updatePaginationControls() {
@@ -44,7 +75,7 @@ function updatePaginationControls() {
     if (nextBtn) nextBtn.disabled = currentPage === totalPages || totalPages === 0;
 }
 
-function setupPagination() {
+function setUpPagination() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
 
@@ -64,7 +95,6 @@ function setupPagination() {
     });
 }
 
-// Function to format the number
 const formatCompactNumber = (number) => {
     return new Intl.NumberFormat('en-US', {
         style: 'currency',
@@ -106,27 +136,6 @@ function generateSparkline(prices) {
     `;
 }
 
-function displayTicker(coins) {
-    const tickerTag = document.querySelector(".ticker-track");
-
-
-    const tickerHTML = coins.map((coin) => {
-        const isPositive = coin.price_change_percentage_24h >= 0;
-        const colorClass = isPositive ? "up" : "down";
-        const arrow = isPositive ? '▲' : '▼';
-
-        return `<span class="ticker-item">
-            <img src="${coin.image}" alt="${coin.name} width="20" height="20"/>
-            ${coin.symbol.toUpperCase()}
-            <span class="${colorClass}">${arrow} ${Math.abs(coin.price_change_percentage_24h).toFixed(2)}%</span>
-        </span>`;
-
-    }).join(".");
-
-    tickerTag.innerHTML = tickerHTML + ' • ' + tickerHTML;
-
-
-}
 
 function displayTable(coins) {
     const tableBody = document.querySelector(".crypto-table-body");
@@ -160,88 +169,5 @@ function displayTable(coins) {
     })
 }
 
-function displayTopGainers(coins) {
-    // DOM vairables
-    const topMover = document.querySelector(".top-gainer");
-    const rank = document.querySelector(".rank")
-    const topCap = document.querySelector(".top-market-cap");
-    const topPrice = document.querySelector(".top-price");
 
-    // Sort the Top gainer
-    const sortedByGain = [...coins].sort((a, b) => b.price_change_percentage_24h - a.price_change_percentage_24h)
-    const topGainer = sortedByGain[0];
-    const topLoser = sortedByGain[sortedByGain.length - 1];
-
-
-    const priceChange = topGainer.price_change_percentage_24h;
-    const isPositive = topGainer.price_change_percentage_24h >= 0;
-    const colorClass = isPositive ? "up" : "down";
-    const arrow = isPositive ? '▲' : '▼';
-
-    coins.forEach(coin => {
-        const sparklineHTML = generateSparkline(coin.sparkline_in_7d.price);
-
-        topMover.classList.add(`${priceChange >= 0 ? 'up' : 'down'}`)
-        topMover.innerHTML = `
-                            <p class="gainer ${priceChange >= 0 ? 'up' : 'down'}">
-                                ${topGainer.name}
-                                ${priceChange.toFixed(2)}%
-                                ${arrow}
-                            </p>
-                            <span class="chart">${sparklineHTML}</span>`;
-    });
-
-    const marketCap = formatCompactNumber(topGainer.market_cap);
-
-    rank.innerHTML = `No.${topGainer.market_cap_rank}`;
-    topCap.innerHTML = `  ${marketCap}`
-    topPrice.innerHTML = `$ ${topGainer.current_price.toLocaleString()}
-    <span class="${priceChange >= 0 ? 'up' : 'down'}">
-                                ${priceChange.toFixed(2)}%
-                                ${arrow}
-                            </span>`;
-
-}
-
-function searchListener() {
-    searchInput.forEach(input => {
-        input.addEventListener("input", (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const name = document.getElementById("gainer-name");
-
-            searchInput.forEach(otherInput => {
-                if (otherInput !== input) {
-                    otherInput.value = input.value;
-                }
-            });
-
-            // name.textContent = `Search Result`;
-            currentPage = 1;
-
-            if (searchTerm === "") {
-                name.textContent = "Top Gainers";
-            } else {
-                name.textContent = "Search Result";
-            }
-
-            const filteredCoins = allCoins.filter(coin =>
-                coin.name.toLowerCase().includes(searchTerm) ||
-                coin.symbol.toLowerCase().includes(searchTerm)
-            );
-
-            displayTopGainers(filteredCoins);
-
-        });
-    })
-
-}
-searchListener();
-
-// Explorer Logic
-
-
-// setInterval(()=>{
-//     apiFetch();
-//     console.log("Updated market data...");
-// }, 6000)
-apiFetch();
+initExplorer();
