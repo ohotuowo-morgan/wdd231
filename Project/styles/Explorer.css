@@ -136,7 +136,7 @@ main {
 }
 
 .filter-label{
-    color: var(--accent2);
+    color: var(--secondary-color);
     font-weight: 600;
     white-space: nowrap;
     margin-right: 10px;
@@ -309,7 +309,7 @@ footer{
 .copy p span,
 .copy a{
     text-align: center;
-    color: var(--accent2);
+    color: var(--secondary-color);
 }
 
 /* Pagination */
@@ -337,6 +337,5 @@ footer{
 
 .pagination-container button:disabled {
     background-color: #131722;
-    color: #555;
     cursor: not-allowed;
 }
