@@ -194,11 +194,9 @@ th:nth-child(7), td:nth-child(7)  /* Volume */
 }
 
 tbody td {
-    /* display: flex; */
     flex-direction: row;
     /* align-items: center; */
     padding: 1rem;
-    /* vertical-align: middle; */
     font-size: 0.95rem;
     font-weight: 500;
 }

@@ -154,7 +154,7 @@ function displayTable(coins) {
         row.innerHTML = `
         
         <td>${coin.market_cap_rank}</td>
-        <td class="cry-logo"><img src="${coin.image}" alt="${coin.name}" width="24">${coin.name}</td>
+        <td ><div class="cry-logo"><img src="${coin.image}" alt="${coin.name}" width="24">${coin.name}</div></td>
         <td>${coin.symbol.toUpperCase()}</td>
         <td>${coin.current_price.toLocaleString()}</td>
         <td class="${priceChange >= 0 ? 'up' : 'down'}">
