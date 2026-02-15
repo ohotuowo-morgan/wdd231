@@ -32,13 +32,17 @@
     }
 
     .ticker-head strong {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 0;
     }
 
     .logo-img {
         width: 70px;
         height: 70px;
+    }
+    
+    .logo-text{
+        font-size: 1.4rem;
     }
 
     input[type="search"] {
@@ -94,7 +98,6 @@
 
     nav .search {
         display: block;
-        place-items: left;
     }
 
     header:has(nav.open) {
@@ -112,6 +115,10 @@
 
     .top {
         min-height: 100px;
+    }
+
+    .top p{
+        font-size: 20px;
     }
 
     .table-container {
@@ -177,5 +184,26 @@
     main {
         padding: 1rem;
 
+    }
+
+    footer{
+        border-top: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        font-size: 1rem;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .copy p,
+    .copy p span,
+    .copy a{
+        text-align: left;
+    }
+
+    .one{
+        margin-bottom: 10px;
     }
 }

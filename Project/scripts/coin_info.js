@@ -101,7 +101,7 @@ function generateSparkline(prices) {
     // 5. Return the HTML string
     return `
         <svg width="${width}" height="${height}" fill="none"  stroke-width="1" stroke="${color}">
-            <polyline points="${points}" />
+            <polyline points="${points}" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
     `;
 }

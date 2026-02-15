@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/Project/images/Coin.png">
     <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/Project/portfolio.html">
 
-    <link rel="icon" href="./images/CoinPulse.svg" width="100">
+    <link rel="icon" href="./images/CoinPulse.svg" >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,15 +44,30 @@
             <a href="./index.html">Home</a>
             <a href="./explorer.html">Explorer</a>
             <a href="./portfolio.html" class="active">Portfolio</a>
-            <input type="search" name="search" class="search" placeholder="Search">
+            <div class="question navq">
+                <p>About Portfolio</p>
+                <img src="./images/qmark.svg" alt="question icon" width="20">
+            </div>
         </nav>
 
-        <input type="search" name="search" id="search" placeholder="Search">
+        <div class="question">
+            <p>About Portfolio</p>
+            <img src="./images/qmark.svg" alt="question icon" width="20">
+        </div>
 
 
     </header>
 
     <main>
+
+         <dialog id="about-portfolio">
+            <button id="close">X</button>
+            <h2>The Portfolio Page</h2>
+            <p>This page is meant to help crypto investors track their assets in real time 
+                and enable them make proper financial decisions. <br>
+                Even thou CoinPulse is not a trading platform it is your best friend inn terms of tracking crypto assests
+            </p>
+        </dialog>
 
         <section class="portfolio-hero">
             <div class="hero-left">
@@ -71,13 +86,12 @@
                 </div>
             </div>
 
-            <!-- <button class="add-asset-btn-hero">+ Add Asset</button> -->
         </section>
 
         <h2>Your Assets</h2>
 
         <div class="container">
-            <section class="table-container">
+            <div class="table-container">
                 <table>
                     <thead>
                         <tr>
@@ -94,10 +108,10 @@
 
                     </tbody>
                 </table>
-            </section>
+            </div>
 
-            <form action="" method="get"  id="add-asset-form">
-                <legend>Add Assets</legend>
+            <form  method="get"  id="add-asset-form">
+                <h3>Add Assets</h3>
 
                 <label for="coin">Coin
                     <select name="coin" id="coin" required>
@@ -105,12 +119,17 @@
                     </select>
                 </label>
 
-                <label for="Amount held">Amount held
-                    <input type="number" name="amount" id="amount" step="any" min="0">
+                <label for="amount">Amount held
+                    <input type="number" name="amount" id="amount" step="any" min="0" required>
                 </label>
 
                 <input type="submit" value="Add to Portfolio">
             </form>
+
+            <dialog id="coin-added">
+                <button id="closeModal">X</button>
+                <p>Added Coin Successfully</p>
+            </dialog>
 
         </div>
         <!-- <div id="pagination-wrapper" class="pagination-container">
@@ -121,11 +140,22 @@
 
     </main>
 
-    <footer>
-        <div class="copy">
-            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> CoinPulse</p>
+   <footer>
+
+       <div class="copy">
+            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> </p>
             <p id="lastModified"></p>
         </div>
+        <div class="social-container">
+            <a href="https://x.com/Glacier_Morgan" target="_blank"><img class="social-img" src="./images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
+            <a href="https://github.com/ohotuowo-morgan" target="_blank"> <img class="social-img" src="./images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/ohotuowo-morgan-851b8530b/" target="_blank"><img class="social-img" src="./images/linkedin.svg" alt="linkedin" width="16" height="16"></a>        
+        </div>
+         <div class="copy one">
+            <p>WDD231 Final Project CoinPulse Crypto Tracker</p>
+            <a href="https://www.loom.com/share/f4e6fa565dca49d09859249006237cad">Video report for final project</a>
+        </div>
+        
     </footer>
 
 </body>

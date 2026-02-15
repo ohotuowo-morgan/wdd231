@@ -43,7 +43,7 @@ header {
     font-weight: 700;
 }
 
-input[type="search"] {
+/* input[type="search"] {
     padding: .5rem;
     border-radius: 6px;
     border: .1px solid var(--accent2);
@@ -53,7 +53,7 @@ input[type="search"] {
 
 input[type="search"]:hover {
     border: 1px solid var(--accent1);
-}
+} */
 
 nav {
     display: flex;
@@ -70,6 +70,22 @@ nav .search{
     display: none;
 }
 
+.question{
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.question p{
+    font-size: 20px;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.navq{
+    display: none;
+}
+
 .active{
     border-bottom: 2px solid var(--accent2);
 }
@@ -81,7 +97,7 @@ main {
 
 .portfolio-hero{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 2rem 0;
     margin-bottom: 2rem;
@@ -127,50 +143,7 @@ main {
 .up { color: var(--accent1); }    
 .down { color: var(--accent3); }  
 
-.filter-container{
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-    padding: 0 1rem;
-    padding-top: .5rem;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
-}
 
-.filter-label{
-    color: var(--accent2);
-    font-weight: 600;
-    margin-right: 10px;
-}
-
-.filter-btn-container{
-    display: flex;
-    gap: 2rem;
-}
-
-.filter-btn{
-    /* font-size: large; */
-    font-weight: bold;
-    padding: .5rem;
-    border-radius: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    border: 1px solid grey;
-    width: 120px;
-    transition: 0.5s ease-in-out;
-}
-
-.active-filter {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-.filter-btn:hover{
-    /* color: var(--accent1); */
-    /* border-color: var(--accent1); */
-    transform: scale(1.1);
-}
 .container{
     display: flex;
     justify-content: space-between;
@@ -188,11 +161,9 @@ table {
     width: 100%;
     margin: 10px auto;
     margin-bottom: 0;
-    
     border-collapse: separate;
     border-spacing: 0;
     color: var(--secondary-color);
-    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); */
     height: 100%;
 }
 
@@ -217,17 +188,10 @@ th:nth-child(7), td:nth-child(7)  /* Volume */
 }
 
 tbody td {
-    /* display: flex; */
-    /* flex-direction: row; */
-    /* align-items: center; */
-    /* vertical-align: middle; */
     padding: 1rem;
-    /* vertical-align: middle; */
     font-size: 0.95rem;
     font-weight: 500;
     border-bottom: 1px solid grey;
-    /* border-bottom-left-radius: 12px; */
-    /* border-bottom-right-radius: 12px; */
 }
 
 /* --- Specific Column Styling --- */
@@ -265,7 +229,42 @@ form{
     padding-bottom: 2rem;
 }
 
-legend{
+#about-portfolio{
+    /* display: block; */
+    text-align: left;
+    padding: 3rem;
+    line-height: 1.2;
+}
+
+dialog{
+    padding: 6rem;
+    text-align: center;
+    background-color: #030814;
+    border-radius: 20px;
+    color: var(--accent2);
+    width: 300px;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#coin-added p{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+h3{
     font-size: 20px;
 }
 label{
@@ -280,9 +279,11 @@ input[type="submit"]{
     border: none;
     border-radius: 12px;
     font-size: 1.1rem;
+    height: 42px;
 }
 
 input[type="number"]{
+    height: 32px;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: .3rem;
@@ -293,6 +294,7 @@ input[type="number"]{
 }
 
 select{
+    height: 42px;
     padding: .3rem;
     border-radius: 8px;
     background-color: var(--primary-color);
@@ -319,13 +321,6 @@ select{
     margin-bottom: 1rem;
 }
 
-/* Optional: Make the line glow slightly */
-polyline {
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
-}
-
 .cry-logo{
     display: flex;
     align-items: center;
@@ -333,14 +328,33 @@ polyline {
 }
 
 footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-img{
+    width: 34px;
+    height: 34px;
 }
 
 .copy p,
-.copy p span{
+.copy p span,
+.copy a{
+    text-align: center;
     color: var(--accent2);
 }
 
+progress{
+    vertical-align: baseline;
+}
 /* Pagination */
 .pagination-container {
     display: flex;

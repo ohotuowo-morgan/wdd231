@@ -33,7 +33,7 @@ function setUpFilters() {
     const items = [...btnContainer];
 
     items.forEach(item => {
-        item.addEventListener("click",  (e) => {
+        item.addEventListener("click", (e) => {
 
             items.forEach(btn => btn.classList.remove("active-filter"))
             // this.classList.add("active-filter");
@@ -131,7 +131,7 @@ function generateSparkline(prices) {
     // 5. Return the HTML string
     return `
         <svg width="${width}" height="${height}" fill="none"  stroke-width="1" stroke="${color}">
-            <polyline points="${points}" />
+            <polyline points="${points}" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
     `;
 }
@@ -168,6 +168,21 @@ function displayTable(coins) {
         tableBody.appendChild(row);
     })
 }
+
+const openModal = document.querySelectorAll(".question");
+const modalContent = document.getElementById("about-explorer");
+const closeModal = document.querySelector("#closeModal");
+
+const displayModalContent = () => {
+    modalContent.showModal();
+}
+
+closeModal.addEventListener("click", () => {
+    modalContent.close();
+});
+
+openModal[0].addEventListener("click", displayModalContent);
+openModal[1].addEventListener("click", displayModalContent);
 
 
 initExplorer();

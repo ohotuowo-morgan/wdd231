@@ -70,8 +70,50 @@ nav .search{
     display: none;
 }
 
+.question{
+    cursor: pointer;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.question p{
+    font-size: 20px;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.navq{
+    display: none;
+}
+
 .active{
     border-bottom: 2px solid var(--accent2);
+}
+
+dialog{
+    /* display: block; */
+    width: 300px;
+    text-align: left;
+    padding: 3rem;
+    line-height: 1.2;
+    background-color: #030814;
+    border-radius: 20px;
+    color: var(--accent2);
+    width: 300px;
+}
+
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+dialog button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 main {
@@ -181,7 +223,7 @@ th:nth-child(7), td:nth-child(7)  /* Volume */
 
 tbody td {
     /* display: flex; */
-    flex-direction: row;
+    /* flex-direction: row; */
     /* align-items: center; */
     padding: 1rem;
     /* vertical-align: middle; */
@@ -236,8 +278,6 @@ tbody td {
 
 /* Optional: Make the line glow slightly */
 polyline {
-    stroke-linecap: round;
-    stroke-linejoin: round;
     filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
 }
 
@@ -248,11 +288,27 @@ polyline {
 }
 
 footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-img{
+    width: 34px;
+    height: 34px;
 }
 
 .copy p,
-.copy p span{
+.copy p span,
+.copy a{
+    text-align: center;
     color: var(--accent2);
 }
 

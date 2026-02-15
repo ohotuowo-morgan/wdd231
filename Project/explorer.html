@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/Project/images/Coin.png">
     <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/Project/explorer.html">
 
-    <link rel="icon" href="./images/CoinPulse.svg" width="100">
+    <link rel="icon" href="./images/CoinPulse.svg" >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,11 +44,16 @@
             <a href="./index.html">Home</a>
             <a href="./explorer.html" class="active">Explorer</a>
             <a href="./portfolio.html">Portfolio</a>
-            <input type="search" name="search" class="search" placeholder="Search">
+            <div class="question navq">
+                <p>About Explorer</p>
+                <img src="./images/qmark.svg" alt="question icon" width="20">
+            </div>
         </nav>
 
-        <input type="search" name="search" id="search" placeholder="Search">
-
+        <div class="question">
+            <p>About Explorer</p>
+            <img src="./images/qmark.svg" alt="question icon" width="20">
+        </div>
 
     </header>
 
@@ -56,8 +61,17 @@
 
         <h1>Top 100 Coins</h1>
 
+        <dialog id="about-explorer">
+            <button id="closeModal">X</button>
+            <h2>The Explorer Page</h2>
+            <p>This page is meant to help crypto investors explore the crypto currency market in real time 
+                and filter through it based on certain market data. <br>
+                Even thou CoinPulse is not a trading platform it is your best friend in terms of tracking crypto assests
+            </p>
+        </dialog>
+
         <div class="container">
-            <section class="table-container">
+            <div class="table-container">
                 <div class="filter-container">
                     <span class="filter-label">Sort by :</span>
                     <div class="filter-btn-container">
@@ -83,7 +97,7 @@
 
                     </tbody>
                 </table>
-            </section>
+            </div>
 
         </div>
         <div id="pagination-wrapper" class="pagination-container">
@@ -95,10 +109,21 @@
     </main>
 
     <footer>
-        <div class="copy">
-            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> CoinPulse</p>
+
+       <div class="copy">
+            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> </p>
             <p id="lastModified"></p>
         </div>
+        <div class="social-container">
+            <a href="https://x.com/Glacier_Morgan" target="_blank"><img class="social-img" src="./images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
+            <a href="https://github.com/ohotuowo-morgan" target="_blank"> <img class="social-img" src="./images/github.svg" alt="github" width="16" height="16"></a>
+            <a href="https://www.linkedin.com/in/ohotuowo-morgan-851b8530b/" target="_blank"><img class="social-img" src="./images/linkedin.svg" alt="linkedin" width="16" height="16"></a>        
+        </div>
+         <div class="copy one">
+            <p>WDD231 Final Project CoinPulse Crypto Tracker</p>
+            <a href="https://www.loom.com/share/f4e6fa565dca49d09859249006237cad">Video report for final project</a>
+        </div>
+        
     </footer>
 
 </body>

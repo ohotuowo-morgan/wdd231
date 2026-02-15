@@ -36,10 +36,20 @@
         padding: 0;
     }
 
+    h1{
+        font-size: 1.7rem;
+        margin-bottom: 4rem;
+    }
+
     .logo-img {
         width: 70px;
         height: 70px;
     }
+
+    .logo-text{
+        font-size: 1.4rem;
+    }
+
 
     input[type="search"] {
         display: none;
@@ -94,7 +104,6 @@
 
     nav .search {
         display: block;
-        place-items: left;
     }
 
     header:has(nav.open) {
@@ -104,6 +113,14 @@
     nav a {
         border-bottom: .5px solid var(--accent2);
         padding-bottom: 5px;
+    }
+
+    .question{
+        display: none;
+    }
+
+    .navq{
+        display: flex;
     }
 
     .todays-Mover {
@@ -129,23 +146,15 @@
         white-space: nowrap;
     }
 
-    th:nth-child(3),
-    td:nth-child(3),
-    /* th:nth-child(5), */
-    /* td:nth-child(5), */
-    /* 24h */
-    /* th:nth-child(6), */
-    /* td:nth-child(6), */
-    /* Market Cap */
-    th:nth-child(7),
-    td:nth-child(7),
-    th:nth-child(8),
-    td:nth-child(8)
-
-    /* Volume */
-        {
-        display: none;
+    dialog{
+        width: fit-content;
     }
+    /* th:nth-child(3), */
+    /* td:nth-child(3) */
+    /* th:nth-child(7),
+    td:nth-child(7){
+        display: none;
+    } */
 
     /* th:nth-child(1),
     td:nth-child(1) {
@@ -180,6 +189,32 @@
     }
 
     .filter-container{
-        gap: 0;
+        gap: 2rem;
+    }
+
+    .cry-logo{
+        padding: 2rem;
+        
+    }
+
+    footer{
+        border-top: 1px solid grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        align-items: flex-start;
+        font-size: 1rem;
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+
+    .copy p,
+    .copy p span,
+    .copy a{
+        text-align: left;
+    }
+
+    .one{
+        margin-bottom: 10px;
     }
 }

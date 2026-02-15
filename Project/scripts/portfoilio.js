@@ -64,7 +64,26 @@ addAssetForm.addEventListener("submit", (e) => {
     displayPortfolioTable(allCoins);
 
     console.log("Portfolio Updated:", myPortfolio);
-    alert("Asset Added Successfully!");
+    // alert("Asset Added Successfully!");
+    const coinModal = document.querySelector('#coin-added');
+
+    function displayModalContent() {
+        coinModal.showModal();
+
+        const closeModal = document.querySelector("#closeModal");
+        closeModal.addEventListener("click", () => {
+            coinModal.close();
+        });
+    }
+
+    displayModalContent();
+
+    coinModal.addEventListener("click", (event) => {
+    if (event.target === coinModal) {
+        coinModal.close();
+    }
+
+});
 
     addAssetForm.reset();
 });
@@ -107,17 +126,17 @@ function displayPortfolioTable(coinsData) {
             // --- PROFIT CALCULATION LOGIC ---
             // 1. Get the percentage change (e.g., 5.0 for 5%)
             const changePercent = coin.price_change_percentage_24h;
-            
+
             // 2. Calculate what this asset was worth 24h ago
             // Formula: Current / (1 + (percent / 100))
             const previousTotal = currentTotal / (1 + (changePercent / 100));
-            
+
             // 3. Add to our running total for yesterday
             totalPreviousValue += previousTotal;
         }
     });
 
-    const totalProfit = totalPortfolioValue -totalPreviousValue
+    const totalProfit = totalPortfolioValue - totalPreviousValue
 
     // Build table rows
     portfolioData.forEach((asset, index) => {
@@ -140,7 +159,7 @@ function displayPortfolioTable(coinsData) {
         <td>
             <div style="display: flex; align-items: center; gap: 10px;">
                 <img src="${coin.image}" alt="${coin.name}" width="24">
-                <span>${coin.name} <span style="color:#888; font-size:0.8em;">${coin.symbol.toUpperCase()}</span></span>
+                <span>${coin.name} <span style="font-size:0.8em;">${coin.symbol.toUpperCase()}</span></span>
             </div>
         </td>
         <td>${asset.amount} <span style="font-size:0.8em; ">${coin.symbol.toUpperCase()}</span></td>
@@ -174,14 +193,29 @@ function updatePorfolioSummary(totalValue, assetCount, totalProfit) {
     if (profitEl) {
         const isPositive = totalProfit >= 0;
         const arrow = isPositive ? '▲' : '▼';
-        
+
         // Format: +$1,200.50
         profitEl.textContent = `${isPositive ? '+' : ''}${formatMoney(totalProfit)} ${arrow}`;
-        
+
         // Update Color
         profitEl.classList.remove('up', 'down');
         profitEl.classList.add(isPositive ? 'up' : 'down');
     }
 }
+
+const openModal = document.querySelectorAll(".question");
+const modalContent = document.getElementById("about-portfolio");
+const closeModal = document.querySelector("#close");
+
+const displayModalContent = () => {
+    modalContent.showModal();
+}
+
+closeModal.addEventListener("click", () => {
+    modalContent.close();
+});
+
+openModal[0].addEventListener("click", displayModalContent);
+openModal[1].addEventListener("click", displayModalContent);
 
 initPortfolio();

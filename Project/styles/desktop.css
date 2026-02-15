@@ -71,6 +71,7 @@ nav .search{
 
 .active{
     border-bottom: 2px solid var(--accent2);
+    transition: 0.5s ease-in-out;
 }
 
 main {
@@ -243,8 +244,6 @@ tbody td {
 
 /* Optional: Make the line glow slightly */
 polyline {
-    stroke-linecap: round;
-    stroke-linejoin: round;
     filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3));
 }
 
@@ -255,11 +254,27 @@ polyline {
 }
 
 footer{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.social-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.social-img{
+    width: 34px;
+    height: 34px;
 }
 
 .copy p,
-.copy p span{
+.copy p span,
+.copy a{
+    text-align: center;
     color: var(--accent2);
 }
 
