@@ -3,11 +3,13 @@
     /*The main page background.*/
     --secondary-color: #F8FAFC;
     /*Main headings, body text.*/
-    --accent1: #10B981;
+    /* --accent1: #10B981; */
+    --accent1: #34D399;
     /* Price Up percentages and successful "Buy" buttons.*/
     --accent2: #8B5CF6;
     /*Branding, call-to-action buttons, or active navigation links*/
-    --accent3: #ff0000;
+    /* --accent3: #ff0000; */
+    --accent3: #F87171;
     /* Price down */
 }
 
@@ -119,6 +121,11 @@ main {
 .up { color: var(--accent1); }    
 .down { color: var(--accent3); }  
 
+span.down,
+span.up{
+    background-color: var(--primary-color);
+}
+
 
 /*"Move" logic */
 @keyframes scroll-ticker {
@@ -145,6 +152,9 @@ main {
     min-height: 100px;
 }
 
+.top-price span{
+    background: none;
+}
 .top p{
     font-size: 24px;
     font-weight: 700;

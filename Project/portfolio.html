@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://ohotuowo-morgan.github.io/wdd231/Project/images/Coin.png">
     <meta property="og:url" content="https://ohotuowo-morgan.github.io/wdd231/Project/portfolio.html">
 
-    <link rel="icon" href="./images/coinpulse.svg" >
+    <link rel="icon" href="./images/coinpulse.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,12 +60,13 @@
 
     <main>
 
-         <dialog id="about-portfolio">
+        <dialog id="about-portfolio">
             <button id="close">X</button>
             <h2>The Portfolio Page</h2>
-            <p>This page is meant to help crypto investors track their assets in real time 
+            <p>This page is meant to help crypto investors track their assets in real time
                 and enable them make proper financial decisions. <br>
-                Even thou CoinPulse is not a trading platform it is your best friend inn terms of tracking crypto assests
+                Even thou CoinPulse is not a trading platform it is your best friend inn terms of tracking crypto
+                assests
             </p>
         </dialog>
 
@@ -80,7 +81,7 @@
                     <p class="label">24h Profit/Loss</p>
                     <p class="stat-value" id="total-profit">-</p>
                 </div>
-                <div class="stat-item"> 
+                <div class="stat-item">
                     <p class="label">Assets</p>
                     <p class="stat-value" id="asset-count">0 Coins</p>
                 </div>
@@ -110,7 +111,7 @@
                 </table>
             </div>
 
-            <form  method="get"  id="add-asset-form">
+            <form method="get" id="add-asset-form">
                 <h3>Add Assets</h3>
 
                 <label for="coin">Coin
@@ -140,22 +141,37 @@
 
     </main>
 
-   <footer>
+    <footer>
 
-       <div class="copy">
-            <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> </p>
-            <p id="lastModified"></p>
+        <div class="newsletter-section">
+            <h4>Stay Updated</h4>
+            <p>Join our newsletter for the latest crypto trends.</p>
+            <form action="thanks.html" method="get" class="newsletter-form">
+                <label for="email" class="sr-only">Email Address</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                <input type="submit" value="Submit email" id="submit-btn">
+            </form>
         </div>
-        <div class="social-container">
-            <a href="https://x.com/Glacier_Morgan" target="_blank"><img class="social-img" src="./images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
-            <a href="https://github.com/ohotuowo-morgan" target="_blank"> <img class="social-img" src="./images/github.svg" alt="github" width="16" height="16"></a>
-            <a href="https://www.linkedin.com/in/ohotuowo-morgan-851b8530b/" target="_blank"><img class="social-img" src="./images/linkedin.svg" alt="linkedin" width="16" height="16"></a>        
+
+        <div class="footer">
+            <div class="copy">
+                <p>Ohotuowo Morgan Agrinya Copyright © <span id="currentyear"></span> </p>
+                <p id="lastModified"></p>
+            </div>
+            <div class="social-container">
+                <a href="https://x.com/Glacier_Morgan" target="_blank"><img class="social-img"
+                        src="./images/twitter-x.svg" alt="twitter" width="16" height="16"></a>
+                <a href="https://github.com/ohotuowo-morgan" target="_blank"> <img class="social-img"
+                        src="./images/github.svg" alt="github" width="16" height="16"></a>
+                <a href="https://www.linkedin.com/in/ohotuowo-morgan-851b8530b/" target="_blank"><img class="social-img"
+                        src="./images/linkedin.svg" alt="linkedin" width="16" height="16"></a>
+            </div>
+            <div class="copy one">
+                <p>WDD231 Final Project CoinPulse Crypto Tracker</p>
+                <a href="https://www.loom.com/share/b7e209744eff4d28a6cd991f73a53d20">Video report for final project</a>
+            </div>
         </div>
-         <div class="copy one">
-            <p>WDD231 Final Project CoinPulse Crypto Tracker</p>
-            <a href="https://www.loom.com/share/b7e209744eff4d28a6cd991f73a53d20">Video report for final project</a>
-        </div>
-        
+
     </footer>
 
 </body>

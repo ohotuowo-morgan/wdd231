@@ -3,11 +3,13 @@
     /*The main page background.*/
     --secondary-color: #F8FAFC;
     /*Main headings, body text.*/
-    --accent1: #10B981;
+    /* --accent1: #10B981; */
+    --accent1: #34D399;
     /* Price Up percentages and successful "Buy" buttons.*/
     --accent2: #8B5CF6;
     /*Branding, call-to-action buttons, or active navigation links*/
-    --accent3: #ff0000;
+    /* --accent3: #ff0000; */
+    --accent3: #F87171;
     /* Price down */
 }
 
@@ -327,7 +329,7 @@ select{
     gap: 5px;
 }
 
-footer{
+.footer{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,4 +383,57 @@ progress{
 .pagination-container button:disabled {
     background-color: #131722;
     cursor: not-allowed;
+}
+
+/* newsletter form */
+.newsletter-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-section h4 {
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    /* margin-top: 1rem; */
+    width: fit-content;
+}
+
+.newsletter-form input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--accent2);
+    background-color: var(--primary-color);
+    /* color: white; */
+    width: 250px;
+}
+
+#submit-btn {
+    padding: 10px;
+    width: 272px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.05);
+}
+
+/* Accessibility: Hide label visually but keep for screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }

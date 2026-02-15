@@ -1,4 +1,6 @@
 import { fetchCoinData } from "./api.mjs";
+const getString = window.location.search;
+console.log('Local search',getString);
 
 let allCoins = [];
 let currentCoins = [];

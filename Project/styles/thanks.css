@@ -1,0 +1,33 @@
+.thanks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.thanks-container h1 {
+    font-size: 3rem;
+    color: #f8fafc;
+    /* Green */
+    margin-bottom: 1rem;
+}
+
+.user-email {
+    color: #f8fafc;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.back-btn {
+    margin-top: 2rem;
+    padding: 10px 20px;
+    background: none;
+    border: .3px solid #8B5CF6;
+    color: #f8fafc;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
