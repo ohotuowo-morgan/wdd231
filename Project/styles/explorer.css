@@ -100,7 +100,6 @@ dialog{
     background-color: #030814;
     border-radius: 20px;
     color: var(--accent2);
-    width: 300px;
 }
 
 dialog::backdrop{
@@ -154,7 +153,6 @@ main {
     padding: .5rem;
     border-radius: 8px;
     background: none;
-    border: none;
     cursor: pointer;
     border: 1px solid grey;
     width: 120px;
@@ -211,6 +209,10 @@ thead th{
 th,
 td {
     padding: 0.6rem;
+}
+
+thead th:nth-child(2) {
+    text-align: left;
 }
 
 th:nth-child(3), td:nth-child(3),

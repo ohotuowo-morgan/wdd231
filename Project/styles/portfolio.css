@@ -175,6 +175,10 @@ thead th{
     padding: 1rem;
 }
 
+thead th:nth-child(2) {
+    text-align: left;
+}
+
 th,
 td {
     padding: 0.6rem;
