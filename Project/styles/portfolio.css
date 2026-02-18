@@ -279,10 +279,11 @@ label{
 }
 
 input[type="submit"]{
-    background-color: var(--accent2);
-    color: var(--secondary-color);
+    cursor: pointer;
+    color: var(--accent2);
+    background: none;
     padding: .3rem;
-    border: none;
+    border: 1px solid var(--accent2);
     border-radius: 12px;
     font-size: 1.1rem;
     height: 42px;
