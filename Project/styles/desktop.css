@@ -3,13 +3,11 @@
     /*The main page background.*/
     --secondary-color: #F8FAFC;
     /*Main headings, body text.*/
-    /* --accent1: #10B981; */
-    --accent1: #34D399;
+    --accent1: #10B981;
     /* Price Up percentages and successful "Buy" buttons.*/
     --accent2: #8B5CF6;
     /*Branding, call-to-action buttons, or active navigation links*/
-    /* --accent3: #ff0000; */
-    --accent3: #F87171;
+    --accent3: #ff0000;
     /* Price down */
 }
 
@@ -115,6 +113,13 @@ main {
     display: inline-block;
     margin: 0 30px;
     font-weight: 700;
+    vertical-align: middle;
+}
+
+.ticker-item img {
+    vertical-align: middle; 
+    display: inline-block;
+    margin-right: 8px;
 }
 
 /* Color Classes */
@@ -137,14 +142,15 @@ span.up{
 .todays-Mover{
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: space-between;
     padding: 1rem 0 3rem;
 }
 
 .top{
+    flex: 1;
     padding: 1rem;
     margin: 0 auto;
-    /* background-color: #232d43; */
     background-color: #354b934e;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
